@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">lab</string>
+    <string-array name="spinner">
+        <item>black</item>
+        <item>red</item>
+        <item>blue</item>
+        <item>green</item>
+    </string-array>
+</resources>
