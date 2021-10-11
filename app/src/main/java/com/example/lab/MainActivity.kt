@@ -1,5 +1,6 @@
 package com.example.lab
 
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,14 +8,12 @@ import android.view.View
 import android.widget.*
 import android.widget.Spinner
 
-
-
-
 class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     private lateinit var editText1: EditText
     private lateinit var  button1: Button
     private lateinit var textView1: TextView
     private lateinit var spinner1: Spinner
+    private lateinit var buttonActivity2: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,25 +24,33 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         button1 = findViewById(R.id.button1)
         textView1 = findViewById(R.id.textView1)
         spinner1 = findViewById(R.id.spinner1)
-
+        buttonActivity2 = findViewById(R.id.activity2)
 
         val adapter = ArrayAdapter.createFromResource(this, R.array.spinner, android.R.layout.simple_spinner_item)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinner1.adapter = adapter
         spinner1.onItemSelectedListener = this
+
+        buttonActivity2.setOnClickListener { openActivity2() }
+
+    }
+
+    private fun openActivity2() {
+        Intent(this, Activity2::class.java).also { intent = it }
+        startActivity(intent)
     }
 
     fun clicked(view: View) {
 
         if(view.id == R.id.button1) {
-            textView1.setText(editText1.text)
+            textView1.text = editText1.text
             showPopUp(view, editText1.text.toString())
         }
     }
 
-    fun showPopUp(view: View, text: String) {
+    private fun showPopUp(view: View, text: String) {
         val popup = PopUp(text)
-        popup.show(supportFragmentManager, "dialog exemple")
+        popup.show(supportFragmentManager, "dialog example")
     }
 
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
