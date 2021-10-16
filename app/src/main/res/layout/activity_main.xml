@@ -62,10 +62,45 @@
         android:id="@+id/activity2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Open Activity 2"
-        tools:layout_editor_absoluteX="36dp"
-        tools:layout_editor_absoluteY="385dp">
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="77dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="298dp"
+        android:text="Activity 2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner1">
 
 
     </Button>
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="77dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="298dp"
+        android:text="ACTIVITY 3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button4"
+        app:layout_constraintStart_toEndOf="@+id/activity2"
+        app:layout_constraintTop_toBottomOf="@+id/spinner1"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="77dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="298dp"
+        android:text="ACTIVITY 4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button3"
+        app:layout_constraintTop_toBottomOf="@+id/spinner1" />
 </androidx.constraintlayout.widget.ConstraintLayout>
